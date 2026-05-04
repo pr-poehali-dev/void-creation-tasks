@@ -1,4 +1,14 @@
 import { useEffect, useRef, useState } from "react"
+import Icon from "@/components/ui/icon"
+
+const solutions = [
+  { icon: "FileSearch", title: "Агенты для проверки документов" },
+  { icon: "ListChecks", title: "Решения по сверке номенклатурных позиций" },
+  { icon: "PenLine", title: "Оцифровка рукописных заявлений" },
+  { icon: "ScanLine", title: "Оцифровка фотографий и сканов" },
+  { icon: "FileText", title: "Агенты для чтения договоров" },
+  { icon: "Users", title: "Агенты для синхронизации кадровых документов" },
+]
 
 export function Philosophy() {
   const [isVisible, setIsVisible] = useState(false)
@@ -6,97 +16,53 @@ export function Philosophy() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true) },
+      { threshold: 0.1 },
     )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} id="philosophy" className="py-32 lg:py-40 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image */}
-          <div
-            className={`relative aspect-[4/5] bg-sand overflow-hidden transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+    <section
+      ref={sectionRef}
+      id="solutions"
+      className="px-6 lg:px-12 py-12"
+      style={{ minHeight: "25vh" }}
+    >
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <p
+            className={`text-xs tracking-[0.25em] uppercase text-primary mb-3 font-medium transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <img
-              src="/minimalist-japanese-interior-design-with-natural-w.jpg"
-              alt="Минималистичный интерьер с натуральным деревом"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            {/* Overlay accent */}
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-terracotta/80" />
-          </div>
+            Что мы автоматизируем
+          </p>
+          <h2
+            className={`font-serif text-3xl md:text-4xl font-semibold text-foreground transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            Список решений
+          </h2>
+        </div>
 
-          {/* Content */}
-          <div className="lg:pl-8">
-            <p
-              className={`text-xs tracking-[0.3em] uppercase text-terracotta mb-6 transition-all duration-1000 delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              Наша философия
-            </p>
-
-            <h2
-              className={`font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-foreground mb-8 text-balance transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              Искусство
-              <span className="italic"> осознанной</span>
-              <br />
-              жизни
-            </h2>
-
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {solutions.map((item, index) => (
             <div
-              className={`space-y-6 text-muted-foreground leading-relaxed transition-all duration-1000 delay-500 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              key={item.title}
+              className={`group flex items-start gap-4 p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
+              style={{ transitionDelay: `${200 + index * 80}ms` }}
             >
-              <p>
-                Мы верим, что каждое пространство таит в себе потенциал для преображения. Не через добавление,
-                а через бережное вычитание — открывая то, что всегда было предначертано.
-              </p>
-              <p>
-                Наш подход вдохновлён японской концепцией <em className="text-foreground">ма</em> — глубокой
-                красотой пустоты — и скандинавским пониманием
-                <em className="text-foreground"> хюгге</em>, этого ощущения уютного умиротворения.
-              </p>
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors duration-300">
+                <Icon name={item.icon} fallback="Cpu" size={20} />
+              </div>
+              <p className="text-sm font-medium text-foreground leading-snug pt-1.5">{item.title}</p>
             </div>
-
-            {/* Stats */}
-            <div
-              className={`grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border transition-all duration-1000 delay-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">12</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет опыта</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">140+</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Проектов</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">8</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Наград</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
