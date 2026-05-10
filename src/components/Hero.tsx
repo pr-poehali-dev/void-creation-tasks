@@ -25,7 +25,7 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Технологии будущего — уже сегодня
+          Мякое внедрение ИИ-агантов в бизнес
         </p>
 
         <h1
@@ -42,7 +42,7 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Автоматизируем бизнес-процессы с помощью искусственного интеллекта. Быстро, точно, надёжно.
+          Внедрение инструментов ИИ в текущие бизнес-процессы
         </p>
 
         <div
@@ -52,7 +52,9 @@ export function Hero() {
         >
           <a
             id="demo"
-            href="#solutions"
+            href="https://ai.plam-it.ru/"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             Наш демо стенд решений
