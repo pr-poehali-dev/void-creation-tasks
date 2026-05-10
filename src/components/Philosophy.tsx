@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import Icon from "@/components/ui/icon"
 
 const solutions = [
-  { icon: "FileSearch", title: "Агенты для проверки документов" },
+  { icon: "FileSearch", title: "Агенты для выверки информации в договорах" },
   { icon: "ListChecks", title: "Решения по сверке номенклатурных позиций" },
   { icon: "PenLine", title: "Оцифровка рукописных заявлений" },
   { icon: "ScanLine", title: "Оцифровка фотографий и сканов" },
