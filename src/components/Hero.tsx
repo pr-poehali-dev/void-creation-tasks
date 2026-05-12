@@ -25,7 +25,7 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Мякое внедрение ИИ-агантов в бизнес
+          Мягкое внедрение ИИ-агентов в бизнес
         </p>
 
         <h1
