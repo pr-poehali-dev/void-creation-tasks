@@ -22,7 +22,9 @@ export function Header() {
               Контакты
             </a>
             <a
-              href="#demo"
+              href="https://ai.plam-it.ru/"
+              target="_blank"
+              rel="noreferrer"
               className="px-5 py-2 bg-primary text-primary-foreground text-sm rounded-full hover:bg-primary/90 transition-all duration-300"
             >
               Демо стенд
