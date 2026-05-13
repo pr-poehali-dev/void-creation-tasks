@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import Icon from "@/components/ui/icon"
 
 const contacts = [
-  { icon: "Mail", label: "Почта", value: "hello@plam.ru", href: "mailto:hello@plam.ru" },
-  { icon: "Phone", label: "Телефон", value: "+7 (800) 000-00-00", href: "tel:+78000000000" },
-  { icon: "MapPin", label: "Адрес", value: "Москва, Россия", href: null },
+  { icon: "Mail", label: "Почта", value: "compay@plam-it.ru", href: "mailto:compay@plam-it.ru" },
+  { icon: "MapPin", label: "Адрес", value: "Москва", href: null },
   { icon: "Send", label: "Telegram", value: "@plam_ai", href: "https://t.me/plam_ai" },
 ]
 
@@ -46,7 +45,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           {contacts.map((item, index) => {
             const content = (
               <div

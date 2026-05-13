@@ -4,7 +4,7 @@ export function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-serif text-xl font-semibold text-primary">Плам</p>
         <p className="text-xs text-muted-foreground text-center">
-          &copy; {new Date().getFullYear()} Плам. Внедрение ИИ-решений.
+          &copy; 2018 – {new Date().getFullYear()} Плам. Внедрение ИИ-решений.
         </p>
         <nav className="flex gap-6">
           <a href="#solutions" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Решения</a>
