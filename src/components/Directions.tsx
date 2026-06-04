@@ -61,7 +61,6 @@ const directions = [
 
 export function Directions() {
   const [isVisible, setIsVisible] = useState(false)
-  const [active, setActive] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -89,34 +88,20 @@ export function Directions() {
           >
             Наши направления
           </h2>
-          <p
-            className={`text-muted-foreground text-sm mt-3 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            Нажмите на карточку, чтобы увидеть сроки и экономический эффект
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {directions.map((dir, index) => (
             <div
               key={dir.title}
-              onClick={() => setActive(active === index ? null : index)}
-              className={`group cursor-pointer rounded-2xl border transition-all duration-500 overflow-hidden ${
+              className={`rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-md hover:shadow-primary/10 transition-all duration-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              } ${
-                active === index
-                  ? "border-primary/50 shadow-lg shadow-primary/10 bg-card"
-                  : "border-border bg-card hover:border-primary/30 hover:shadow-md hover:shadow-primary/10"
               }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="p-6">
-                <div className="flex items-start gap-4 mb-3">
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                    active === index ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary group-hover:bg-primary/20"
-                  }`}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <Icon name={dir.icon} fallback="Cpu" size={22} />
                   </div>
                   <div>
@@ -125,21 +110,19 @@ export function Directions() {
                   </div>
                 </div>
 
-                <div className={`transition-all duration-500 overflow-hidden ${active === index ? "max-h-64 opacity-100 mt-4" : "max-h-0 opacity-0"}`}>
-                  <div className="pt-4 border-t border-border space-y-3">
-                    <div className="flex items-center gap-2">
-                      <Icon name="Clock" fallback="Clock" size={14} className="text-primary shrink-0" />
-                      <span className="text-xs text-muted-foreground">MVP за <span className="font-semibold text-foreground">{dir.mvp}</span></span>
-                    </div>
-                    <ul className="space-y-1.5">
-                      {dir.metrics.map((m) => (
-                        <li key={m} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <Icon name="TrendingUp" fallback="TrendingUp" size={13} className="text-primary shrink-0 mt-0.5" />
-                          {m}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="pt-4 border-t border-border space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Clock" fallback="Clock" size={14} className="text-primary shrink-0" />
+                    <span className="text-xs text-muted-foreground">MVP за <span className="font-semibold text-foreground">{dir.mvp}</span></span>
                   </div>
+                  <ul className="space-y-1.5">
+                    {dir.metrics.map((m) => (
+                      <li key={m} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <Icon name="TrendingUp" fallback="TrendingUp" size={13} className="text-primary shrink-0 mt-0.5" />
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
