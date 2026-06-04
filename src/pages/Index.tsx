@@ -4,6 +4,7 @@ import { Philosophy } from "@/components/Philosophy"
 import { Services } from "@/components/Services"
 import { Roadmap } from "@/components/Roadmap"
 import { Directions } from "@/components/Directions"
+import { Policy } from "@/components/Policy"
 import { Contact } from "@/components/Contact"
 import { Footer } from "@/components/Footer"
 
@@ -16,6 +17,7 @@ export default function Index() {
       <Services />
       <Roadmap />
       <Directions />
+      <Policy />
       <Contact />
       <Footer />
     </main>
