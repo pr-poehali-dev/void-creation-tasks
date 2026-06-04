@@ -21,6 +21,9 @@ export function Header() {
             <a href="#directions" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
               Направления
             </a>
+            <a href="#policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+              Госполитика
+            </a>
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
               Контакты
             </a>
@@ -50,6 +53,7 @@ export function Header() {
             <a href="#solutions" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Решения</a>
             <a href="#services" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Услуги</a>
             <a href="#directions" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Направления</a>
+            <a href="#policy" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Госполитика</a>
             <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">Контакты</a>
           </div>
         </div>
