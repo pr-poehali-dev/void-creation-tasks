@@ -15,8 +15,8 @@ export default function Index() {
       <Hero />
       <Philosophy />
       <Services />
-      <Roadmap />
       <Directions />
+      <Roadmap />
       <Policy />
       <Contact />
       <Footer />
